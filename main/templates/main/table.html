@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Feedback Table</h1>
+    <div class="container" style="display: flex; justify-content: center;">
+        <table border="1">
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Phone Number</td>
+                <td>Message</td>
+            </tr>
+            {% for i in data %}
+              
+          
+            <tr>
+                <td>{{i.name}}</td>
+                <td>
+                    {{i.email}}
+                </td>
+                <td>{{i.phone_number}}</td>
+                <td>{{i.message}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
