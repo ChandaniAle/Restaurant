@@ -1,0 +1,38 @@
+# Virtual Environments
+myenv/
+.venv/
+venv/
+env/
+ENV/
+
+# Git
+.git
+.gitignore
+
+# Python cache and compiled files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+.Python
+htmlcov/
+.tox/
+.coverage
+.cache
+.pytest_cache/
+
+# Django specific
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Docker files (no need to copy them inside themselves)
+Dockerfile
+.dockerignore
+docker-compose*
+
+# Environment secrets (DO NOT bake these into the image)
+.env
+.secrets

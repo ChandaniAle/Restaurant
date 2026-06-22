@@ -1,0 +1,76 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+src/venv/
+ENV/
+env/
+myenv/
+.env/
+.venv/
+pip-selfcheck.json
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Environment variables (Sensitive data)
+.env
+.secret
+.secrets
+
+# JetBrains IDEs (PyCharm, etc.)
+.idea/
+
+# VS Code
+.vscode/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+db.sqlite3
+main/__pycache__/__init__.cpython-312.pyc
+main/__pycache__/admin.cpython-312.pyc
+main/__pycache__/apps.cpython-312.pyc
+main/__pycache__/models.cpython-312.pyc
+main/__pycache__/urls.cpython-312.pyc
+main/__pycache__/views.cpython-312.pyc
+main/migrations/__pycache__/__init__.cpython-312.pyc
+main/migrations/__pycache__/0001_initial.cpython-312.pyc
+Restaurant/__pycache__/__init__.cpython-312.pyc
+Restaurant/__pycache__/settings.cpython-312.pyc
+Restaurant/__pycache__/urls.cpython-312.pyc
+Restaurant/__pycache__/wsgi.cpython-312.pyc
