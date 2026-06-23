@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:  
+  db_service:
+    image: postgres:16-alpine
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: ${DB_NAME:-aledb}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-12345}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - private-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend-service:
+    build: .
+    container_name: python_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db_service
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:-aledb}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD:-12345}
+    networks:
+      - private-net
+    depends_on:
+      db_service:
+        condition: service_healthy
+
+networks:
+  private-net:
+    name: private-net
+    driver: bridge
+
+volumes:
+  postgres_data:

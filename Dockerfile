@@ -38,7 +38,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY --from=builder /build/wheels /app/wheels
 COPY --from=builder /build/requirements.txt /app/
 
-RUN pip install --no-cache-dir -r /app/wheels/*
+# RUN pip install --no-cache-dir -r /app/wheels/*
+
+
+# 2. FIX: Read the text file, but pull the installations from your wheels cache folder
+RUN pip install --no-cache-dir --no-index --find-links=/app/wheels -r /app/requirements.txt
 
 COPY . .
 
