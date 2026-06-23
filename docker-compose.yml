@@ -23,6 +23,7 @@ services:
     container_name: python_backend
     ports:
       - "8000:8000"
+    command: python3 manage.py runserver 0.0.0.0:8000
     environment:
       - DB_HOST=db_service
       - DB_PORT=5432
