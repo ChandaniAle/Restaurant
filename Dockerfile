@@ -15,7 +15,7 @@ WORKDIR /build
 # Install system tools needed to compile mysqlclient
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    default-libmysqlclient-dev \
+    libpq5 \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 # ------------------------
@@ -31,7 +31,7 @@ WORKDIR /app
 
 # We still need the runtime C library for MySQL, but NOT the compilers
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    default-libmysqlclient-dev \
+    libpq5 \
     && rm -rf /var/lib/apt/lists/*
 
 
